@@ -1,0 +1,29 @@
+.footer {
+	display: flex;
+	flex-direction: row;
+	column-gap: 20px;
+	justify-content: center;
+	color: #8d8d8d;
+	padding: 20px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+	a {
+		text-decoration: none;
+		transition: all 100ms linear;
+		&:hover {
+			color: #31f399;
+		}
+	}
+
+	a:visited {
+		color: #8d8d8d;
+		text-decoration: none;
+		transition: all 100ms linear;
+		&:hover {
+			color: #31f399;
+		}
+	}
+}
