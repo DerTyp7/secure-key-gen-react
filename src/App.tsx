@@ -5,8 +5,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@/assets/styles/app.scss";
 import Legal from "./Legal";
 import Privacy from "./Privacy";
+import { getAnalytics } from "firebase/analytics";
+import { app } from "./firebase";
 
 function App() {
+	const analytics = getAnalytics(app);
+
 	return (
 		<div className="app">
 			<BrowserRouter>
