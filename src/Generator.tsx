@@ -7,6 +7,7 @@ const colorGood = "#31f399 ";
 const colorBest = "#1fff3d";
 
 export default function Generator() {
+	let initalLoaded: boolean = false;
 	const [password, setPassword] = useState("");
 
 	const [length, setLength] = useState(64);
@@ -37,6 +38,34 @@ export default function Generator() {
 		}
 	}
 
+	function saveToLocalStorage() {
+		localStorage.setItem("length", length.toString());
+		localStorage.setItem("numbers", numbers.toString());
+		localStorage.setItem("symbols", symbols.toString());
+		localStorage.setItem("uppercase", uppercase.toString());
+		localStorage.setItem("lowercase", lowercase.toString());
+		localStorage.setItem("similar", similar.toString());
+		localStorage.setItem("ambiguous", ambiguous.toString());
+	}
+
+	function loadFromLocalStorage() {
+		const length = localStorage.getItem("length") ?? "64";
+		const numbers = localStorage.getItem("numbers") ?? "true";
+		const symbols = localStorage.getItem("symbols") ?? "true";
+		const uppercase = localStorage.getItem("uppercase") ?? "true";
+		const lowercase = localStorage.getItem("lowercase" ?? "true");
+		const similar = localStorage.getItem("similar") ?? "false";
+		const ambiguous = localStorage.getItem("ambiguous") ?? "false";
+
+		setLength(parseInt(length));
+		setNumbers(numbers === "true");
+		setSymbols(symbols === "true");
+		setUppercase(uppercase === "true");
+		setLowercase(lowercase === "true");
+		setSimilar(similar === "true");
+		setAmbiguous(ambiguous === "true");
+	}
+
 	function generate() {
 		setPassword(
 			generatePassword({
@@ -49,9 +78,15 @@ export default function Generator() {
 				excludeAmbiguous: ambiguous,
 			})
 		);
+		saveToLocalStorage();
 	}
 
 	useEffect(() => {
+		if (!initalLoaded) {
+			loadFromLocalStorage();
+			initalLoaded = true;
+		}
+
 		generate();
 	}, []);
 
