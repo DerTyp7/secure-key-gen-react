@@ -30,7 +30,7 @@ function App() {
 			></script>
 			<ins
 				className="adsbygoogle"
-				style={{ display: "block" }}
+				style={{ display: "block", marginTop: "50px" }}
 				data-ad-client="ca-pub-8119996338498432"
 				data-ad-slot="9391117708"
 				data-ad-format="auto"
