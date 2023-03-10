@@ -1,29 +1,37 @@
 .footer {
 	display: flex;
 	flex-direction: row;
-	column-gap: 20px;
+	column-gap: 30px;
 	justify-content: center;
 	color: #8d8d8d;
-	padding: 20px;
 	text-align: center;
-	position: fixed;
-	bottom: 0;
+	padding-bottom: 30px;
+
 	width: 100%;
 
-	a {
-		text-decoration: none;
-		transition: all 100ms linear;
-		&:hover {
-			color: #31f399;
-		}
+	@media screen and (max-width: 550px) {
+		flex-direction: column;
 	}
 
-	a:visited {
-		color: #8d8d8d;
-		text-decoration: none;
-		transition: all 100ms linear;
-		&:hover {
-			color: #31f399;
+	div {
+		a {
+			text-decoration: none;
+			transition: all 100ms linear;
+			color: #8d8d8d;
+			margin-inline: 10px;
+
+			&:hover {
+				color: #31f399;
+			}
+		}
+
+		a:visited {
+			color: #8d8d8d;
+			text-decoration: none;
+			transition: all 100ms linear;
+			&:hover {
+				color: #31f399;
+			}
 		}
 	}
 }

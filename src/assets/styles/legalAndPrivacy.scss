@@ -1,0 +1,42 @@
+.legalAndPrivayContainer {
+	width: 100%;
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	h1 {
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 20px;
+	}
+
+	// Back to home button
+	& > a {
+		text-decoration: none;
+		transition: all 100ms linear;
+		color: #1fcf7d;
+		padding: 20px 30px;
+		&:hover {
+			color: #1dff95;
+		}
+	}
+	.content {
+		width: 80%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 14pt;
+		text-align: left;
+		line-height: 2em;
+		letter-spacing: 1px;
+		text-overflow: clip;
+		word-wrap: break-word;
+
+		h3,
+		h2 {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+	}
+}

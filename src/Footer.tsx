@@ -4,9 +4,16 @@ import "@/assets/styles/footer.scss";
 function Footer() {
 	return (
 		<footer className="footer">
-			<p>© 2020 - 2021</p>
-			<a href="#">Privacy</a>
-			<a href="#">Legal Notice</a>
+			<div>
+				<p>© 2023 - SecureKeyGen.com</p>
+			</div>
+			<div>
+				<a target="_blank" href="https://github.com/DerTyp876/SecureKeyGen">
+					GitHub
+				</a>
+				<a href="/privacy">Privacy</a>
+				<a href="/legal">Legal Notice</a>
+			</div>
 		</footer>
 	);
 }
